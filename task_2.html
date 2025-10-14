@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 2 - Task 2: Conference Registration Form</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #f4eaff, #e5d6ff);
+      margin: 40px;
+      color: #2e003e;
+      transition: background 0.5s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5e17eb;
+      margin-bottom: 30px;
+      animation: fadeInDown 1s ease;
+    }
+
+    form {
+      width: 60%;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(94, 23, 235, 0.3);
+      animation: fadeInUp 1s ease;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #4b0082;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #b28dff;
+      border-radius: 8px;
+      background-color: #f9f7ff;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #7a30f5;
+      outline: none;
+      background-color: #f1e6ff;
+    }
+
+    .radio-group, .checkbox-group {
+      margin-top: 8px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: #5e17eb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #4a0fbf;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Conference Registration Form</h1>
+
+  <form action="#" method="post">
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="18" max="99" placeholder="18" required>
+
+    <label>Gender:</label>
+    <div class="radio-group">
+      <input type="radio" id="male" name="gender" value="Male">
+      <label for="male" style="display:inline;">Male</label>
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="female" style="display:inline;">Female</label>
+    </div>
+
+    <label for="country">Country of Residence:</label>
+    <select id="country" name="country">
+      <option value="">-- Select Country --</option>
+      <option>Malaysia</option>
+      <option>Singapore</option>
+      <option>Thailand</option>
+      <option>Indonesia</option>
+      <option>Philippines</option>
+    </select>
+
+    <label>Areas of Interest:</label>
+    <div class="checkbox-group">
+      <input type="checkbox" id="software" name="interest" value="Software Development">
+      <label for="software" style="display:inline;">Software Development</label><br>
+      <input type="checkbox" id="data" name="interest" value="Data Science">
+      <label for="data" style="display:inline;">Data Science</label><br>
+      <input type="checkbox" id="cyber" name="interest" value="Cybersecurity">
+      <label for="cyber" style="display:inline;">Cybersecurity</label><br>
+      <input type="checkbox" id="ai" name="interest" value="Artificial Intelligence">
+      <label for="ai" style="display:inline;">Artificial Intelligence</label>
+    </div>
+
+    <label>Experience Level:</label>
+    <div class="radio-group">
+      <input type="radio" id="beginner" name="level" value="Beginner">
+      <label for="beginner" style="display:inline;">Beginner</label>
+      <input type="radio" id="intermediate" name="level" value="Intermediate">
+      <label for="intermediate" style="display:inline;">Intermediate</label>
+      <input type="radio" id="advanced" name="level" value="Advanced">
+      <label for="advanced" style="display:inline;">Advanced</label>
+    </div>
+
+    <label for="comments">Comments or Questions:</label>
+    <textarea id="comments" name="comments" placeholder="Any comments or questions?"></textarea>
+
+    <div class="buttons">
+      <input type="submit" value="Register">
+      <input type="reset" value="Reset">
+    </div>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
