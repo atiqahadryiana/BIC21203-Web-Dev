@@ -8,27 +8,32 @@
         body {
             font-family: "Segoe UI", Arial, sans-serif;
             margin: 40px;
-            background-color: #f4f0fa;
+            background: linear-gradient(135deg, #f3eaff, #e5d6ff);
             color: #2e003e;
+            transition: background 0.5s, color 0.5s;
         }
         h1 {
             text-align: center;
             color: #5e17eb;
             margin-bottom: 30px;
+            animation: fadeInDown 1s ease;
         }
+
         table {
-            width: 75%;
+            width: 80%;
             margin: 0 auto;
             border-collapse: collapse;
             background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(94, 23, 235, 0.2);
+            box-shadow: 0 4px 15px rgba(94, 23, 235, 0.3);
             border-radius: 10px;
             overflow: hidden;
+            animation: fadeInUp 1s ease;
         }
         th, td {
             border: 1px solid #b28dff;
-            padding: 10px;
+            padding: 12px;
             vertical-align: top;
+            transition: background 0.3s;
         }
         th {
             background-color: #e6d6ff;
@@ -37,6 +42,9 @@
         }
         td {
             background-color: #f9f7ff;
+        }
+        tr:hover td {
+            background-color: #f0e0ff;
         }
         .photo {
             text-align: center;
@@ -48,6 +56,10 @@
             object-fit: cover;
             border: 2px solid #a46bff;
             border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
         }
         .section-title {
             font-weight: bold;
@@ -58,12 +70,86 @@
         a {
             color: #6a0dad;
             text-decoration: none;
+            font-weight: 500;
         }
         a:hover {
             text-decoration: underline;
+            color: #5e17eb;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #5e17eb;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(94, 23, 235, 0.4);
+            transition: background 0.3s;
+        }
+        .toggle-btn:hover {
+            background-color: #4a0fbf;
+        }
+
+        .top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #a46bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(164, 107, 255, 0.5);
+            transition: transform 0.3s;
+        }
+        .top-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInDown {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1b0033, #3c006b);
+            color: #f0eaff;
+        }
+        body.dark-mode table {
+            background-color: #2d004d;
+            color: #f0eaff;
+            border-color: #7f5fff;
+        }
+        body.dark-mode th {
+            background-color: #3c0070;
+        }
+        body.dark-mode td {
+            background-color: #2b004b;
+        }
+        body.dark-mode a {
+            color: #cdb1ff;
+        }
+        body.dark-mode .toggle-btn {
+            background-color: #cdb1ff;
+            color: #2e003e;
         }
     </style>
 </head>
+<body>
+
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
 <body>
 
     <h1>My Personal Information</h1>
@@ -71,9 +157,9 @@
     <table>
         <tr>
             <th>Name</th>
-            <td>Siti Nuratiqah Adryiana Binti MOhammad Adli</td>
+            <td>Siti Nuratiqah Adryiana Binti Mohammad Adli</td>
             <th rowspan="4" class="photo">
-                <img src="photo.jpg" alt="My Photo">
+                <img src="Photos.jpeg" alt="My Photo">
             </th>
         </tr>
         <tr>
@@ -118,11 +204,11 @@
         </tr>
         <tr>
             <th>Social Media</th>
-            <td colspan="2"><a href="https:" target="_blank">@johndoe</a></td>
+            <td colspan="2"><a href="https://instagram.com/atiqahhadryiana" target="_blank">Instagram</a></td>
         </tr>
         <tr>
             <th>Website</th>
-            <td colspan="2"><a href="https://atiqahadryiana.github.io" target="_blank">https://atiqahadryiana.github.io</a></td>
+            <td colspan="2"><a href="https://atiqahadryiana.github.io" target="_blank">Github</a></td>
         </tr>
 
         <tr>
@@ -142,6 +228,7 @@
             <td colspan="2">Travel alone</td>
         </tr>
     </table>
+<button class="top-btn" id="topBtn" onclick="scrollToTop()">↑</button>
 
 </body>
 </html>
