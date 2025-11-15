@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 4A – JavaScript</title>
+</head>
+<body>
+    <script>
+        // -------------------------------------------------------------
+        // Question 1: Print 1 to 10 using a for loop
+        // -------------------------------------------------------------
+        function printNumbers() {
+            console.log("Question 1: Printing numbers from 1 to 10");
+
+            for (let i = 1; i <= 10; i++) {
+                console.log(i);
+            }
+            console.log("Loop finished!");
+        }
+
+        printNumbers(); // Function call
+
+
+        // -------------------------------------------------------------
+        // Question 2: Prompt input & check strict equality
+        // -------------------------------------------------------------
+        function checkUTHM() {
+            console.log("Question 2: Checking UTHM input");
+
+            const userInput = prompt("Enter a value:");
+
+            if (userInput === "UTHM") {
+                console.log("Welcome to UTHM!");
+            } else {
+                console.log("Invalid entry!");
+            }
+        }
+
+        checkUTHM(); // Function call
+
+
+        // -------------------------------------------------------------
+        // Question 3: Arrow function calculateSum
+        // -------------------------------------------------------------
+        const calculateSum = (num1, num2) => num1 + num2;
+
+        function getAndSumNumbers() {
+            console.log("Question 3: Calculating sum using arrow function");
+
+            const firstNumber = Number(prompt("Enter first number:"));
+            const secondNumber = Number(prompt("Enter second number:"));
+
+            const result = calculateSum(firstNumber, secondNumber);
+            alert("The sum is: " + result);
+        }
+
+        getAndSumNumbers(); // Function call
+
+
+        // -------------------------------------------------------------
+        // Question 4: Car object with a method
+        // -------------------------------------------------------------
+        const car = {
+            brand: "Toyota",
+            model: "Vios",
+            year: 2020,
+
+            // Returns formatted car details
+            carDetails() {
+                return `Car: ${this.brand} ${this.model}, Year: ${this.year}`;
+            }
+        };
+
+        console.log("Question 4: Car Details");
+        console.log(car.carDetails());
+
+
+        // -------------------------------------------------------------
+        // Question 5: Array operations (fruits)
+        // -------------------------------------------------------------
+        function manipulateFruits() {
+            console.log("Question 5: Array Manipulation");
+
+            let fruits = ["Apple", "Banana"];   // (a)
+            fruits.push("Mango");               // (b) Add to end
+            fruits.unshift("Grapes");           // (c) Add to beginning
+            fruits.pop();                       // (d) Remove last
+            fruits.shift();                     // (e) Remove first
+
+            console.log("Final fruits array:", fruits); // (f)
+        }
+
+        manipulateFruits(); // Function call
+
+    </script>
+</body>
+</html>
